@@ -13,10 +13,6 @@ module.exports = function(RED) {
         node.west = +config.west;
         node.south = +config.south;
         node.east = +config.east;
-        node.log('North: ' + node.north)
-        node.log('West: ' + node.west)
-        node.log('South: ' + node.south)
-        node.log('East: ' + node.east)
         if (node.north < -90 || this.north > 90) {
             err = "North should be a number between -90 and 90";
         } else if (this.west < -180 || this.west > 180) {
@@ -45,15 +41,15 @@ module.exports = function(RED) {
                     var flight = flights[f]
                     outputMsgs.push({payload: flight})
                 }
-                node.debug(flights.length + " flights received")
                 send([outputMsgs]);
                 node.status({fill:"grey",shape:"dot",text:"sucessful"});
                 done();
               })
             .catch((e) => {
-                node.status({fill:"red",shape:"dot",text:"status code ${e.statusCode}"});
-                node.error(err)
-                done(err)
+                var errmsg = "status code "+ e.statusCode
+                node.status({fill:"red",shape:"dot",text:errmsg})
+                node.error(e)
+                done(e)
             });
         });
         node.on('close', function(removed, done) {
