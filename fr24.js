@@ -48,8 +48,7 @@ module.exports = function(RED) {
             .catch((e) => {
                 var errmsg = "status code "+ e.statusCode
                 node.status({fill:"red",shape:"dot",text:errmsg})
-                node.error(e)
-                done(e)
+                done(errmsg)
             });
         });
         node.on('close', function(removed, done) {
