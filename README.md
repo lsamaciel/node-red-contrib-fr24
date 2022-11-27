@@ -12,8 +12,6 @@ If you happen to stumble on this project by chance don't use it yet, come back i
 
 - v0.1.0 - Initial release
 
-- see [CHANGELOG](https://github.com/lsamaciel/node-red-contrib-fr24/blob/master/CHANGELOG.md) for full list of changes.
-
 ## Install
 
 Either use the Manage Palette option in the Node-RED Editor menu, or run the following command in your Node-RED user directory - typically `~/.node-red`

@@ -50,9 +50,9 @@ module.exports = function(RED) {
                 node.status({fill:"grey",shape:"dot",text:"sucessful"});
                 done();
               })
-            .catch((err) => {
-                console.log(err)
-                if (err.contains(520))
+            .catch((e) => {
+                console.log(e.message)
+                if (e.message.includes(520))
                     node.status({fill:"red",shape:"dot",text:"too many requests"});
                 else
                     node.status({fill:"red",shape:"dot",text:"error"});
