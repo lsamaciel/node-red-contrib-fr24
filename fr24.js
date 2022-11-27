@@ -35,6 +35,7 @@ module.exports = function(RED) {
                 node.error(err)
                 node.status({fill:"red",shape:"ring",text:"invalid params"});
                 done(err)
+                return
             }
             node.status({fill:"yellow",shape:"dot",text:"requesting..."});
             radar(node.north, node.west, node.south, node.east)
