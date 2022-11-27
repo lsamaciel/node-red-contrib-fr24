@@ -1,0 +1,41 @@
+{
+  "name": "node-red-contrib-fr24",
+  "version": "0.1.0",
+  "description": "Node-RED node to retrieve plane locations from flightradar24 service, complete rewrite since the original source code is not available anymore.",
+  "dependencies": {
+    "flightradar24-client": "^0.3.0"
+  },
+  "bundledDependencies": [
+    "flightradar24-client"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lsamaciel/node-red-contrib-fr24.git"
+  },
+  "license": "Apache 2.0",
+  "keywords": [
+    "flightradar24",
+    "node-red",
+    "flight",
+    "aircraft",
+    "airplane",
+    "plane"
+  ],
+  "node-red" : {
+      "version": ">=1.0.0",
+      "nodes": {
+          "fr24": "fr24.js"
+      }
+  },
+  "author": {
+    "name": "Leonardo S. A. Maciel",
+    "email": "leonardo@maciel.org"
+  },
+  "bugs": {
+    "url": "https://github.com/lsamaciel/node-red-contrib-fr24/issues"
+  },
+  "homepage": "https://github.com/lsamaciel/node-red-contrib-fr24#readme",
+  "engines": {
+    "node": ">=12"
+  }
+}

@@ -1,0 +1,46 @@
+<script type="text/javascript">
+    RED.nodes.registerType('fr24',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name:  {value:""},
+            north: {value:-22, required:true, validate:RED.validators.number()},
+            west:  {value:-50, required:true, validate:RED.validators.number()},
+            south: {value:-26, required:true, validate:RED.validators.number()},
+            east:  {value:-30, required:true, validate:RED.validators.number()}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-plane",
+        label: function() {
+            return this.name||"fr24";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="fr24">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-north"><i class="fa fa-tag"></i> North</label>
+        <input type="text" id="node-input-north" placeholder="a number between -90 and 90">
+    </div>
+    <div class="form-row">
+        <label for="node-input-west"><i class="fa fa-tag"></i> West</label>
+        <input type="text" id="node-input-west"  placeholder="a number between -180 and 180">
+    </div>
+    <div class="form-row">
+        <label for="node-input-south"><i class="fa fa-tag"></i> South</label>
+        <input type="text" id="node-input-south" placeholder="a number between -90 and 90">
+    </div>
+    <div class="form-row">
+        <label for="node-input-east"><i class="fa fa-tag"></i> East</label>
+        <input type="text" id="node-input-east"  placeholder="a number between -180 and 180">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="fr24">
+    <p>A simple node that retrieves plane locations from flightradar24 service within north, east, west and south boundaries each time a message is received. Requires a Flightradar24 Premium plan. Not an official flightplane24 node.</p>
+</script>
