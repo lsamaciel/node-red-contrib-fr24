@@ -51,7 +51,10 @@ module.exports = function(RED) {
                 done();
               })
             .catch((e) => {
+                console.log(e.name)
                 console.log(e.message)
+                console.log(e.cause)
+                console.log(e.toString())
                 if (e.message.includes(520))
                     node.status({fill:"red",shape:"dot",text:"too many requests"});
                 else
